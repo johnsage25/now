@@ -304,7 +304,15 @@ function install_docker_registry {
     echo "Installing docker-registry..."
     sudo mkdir -p /var/lib/registry
     docker rm -f registry || true
-    docker run -d -p ${registryport}:${registryport} -e REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry -v /var/lib/registry:/var/lib/registry --restart=always --name registry registry:2
+    
+    # Pull the registry image explicitly before running it
+    docker pull registry:2 || { echo "Failed to pull registry:2 image"; exit 1; }
+
+    docker run -d --restart=always \
+        -p ${registryport}:${registryport} \
+        -e REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry \
+        -v /var/lib/registry:/var/lib/registry \
+        --name registry registry:2
 }
 
 function install_mongo {
