@@ -24,7 +24,7 @@ Note: This scripts works only on Debian or Ubuntu distros, isn't supported to ru
 Running the command below should already create a working tsuru environment:
 
 ```
-curl -sL https://raw.githubusercontent.com/tsuru/now/master/run.bash | bash
+curl -sL https://raw.githubusercontent.com/johnsage25/now/refs/heads/master/run.bash | bash
 ```
 
 ## Advanced Usage
