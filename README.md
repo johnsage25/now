@@ -34,7 +34,7 @@ With Tsuru Now, you can build your own tsuru cluster easily.
 ### Building a cluster server
 
 ```
-curl -sL https://raw.githubusercontent.com/tsuru/now/master/run.bash | bash -s -- --template server
+curl -sL https://raw.githubusercontent.com/johnsage25/now/refs/heads/master/run.bash | bash -s -- --template server
 ```
 
 
@@ -43,7 +43,7 @@ curl -sL https://raw.githubusercontent.com/tsuru/now/master/run.bash | bash -s -
 Assume the IP address of the cluster server is 10.42.42.1
 
 ```
-curl -sL https://raw.githubusercontent.com/tsuru/now/master/run.bash | bash -s -- --template client --private-ip 10.42.42.1
+curl -sL https://raw.githubusercontent.com/johnsage25/now/refs/heads/master/run.bash | bash -s -- --template client --private-ip 10.42.42.1
 ```
 
 
@@ -52,5 +52,5 @@ curl -sL https://raw.githubusercontent.com/tsuru/now/master/run.bash | bash -s -
 Assume the IP address of the cluster server is 10.42.42.1
 
 ```
-curl -sL https://raw.githubusercontent.com/tsuru/now/master/run.bash | bash -s -- --template dockerfarm --private-ip 10.42.42.1
+curl -sL https://raw.githubusercontent.com/johnsage25/now/refs/heads/master/run.bash | bash -s -- --template dockerfarm --private-ip 10.42.42.1
 ```
