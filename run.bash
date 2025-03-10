@@ -242,6 +242,8 @@ function install_basic_deps {
         sudo perl -i -pe 's/^# *(.+)(trusty|trusty-updates|trusty-security) multiverse$/$1$2 multiverse/gi' /etc/apt/sources.list
     fi
     sudo apt-get update
+    sudo apt update
+    sudo apt install net-tools
     sudo apt-get install -qqy linux-modules-extra-$(uname -r)
     sudo apt-get install jq screen curl mercurial git bzr \
                          software-properties-common apt-transport-https -y
@@ -552,7 +554,7 @@ function install_all {
     install_redis
     install_mongo
     install_planb
-    install_gandalf
+    # install_gandalf
     if [[ ${install_tsuru_source-} == "1" ]]; then
         config_tsuru_pre
         install_go
@@ -608,7 +610,7 @@ function install_server {
     install_redis
     install_mongo
     install_planb
-    install_gandalf
+    # install_gandalf
     install_tsuru_pkg
     config_tsuru_post
     config_git_key
