@@ -315,7 +315,8 @@ function install_docker_registry {
     echo "Installing docker-registry..."
     sudo mkdir -p /var/lib/registry
     docker rm -f registry || true
-    docker run -d -p ${registryport}:${registryport} -e REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry -v /var/lib/registry:/var/lib/registry --restart=always --name registry registry:latest
+    sudo docker run -d -p 5000:5000 --restart=always --name registry registry:latest
+    # docker run -d -p ${registryport}:${registryport} -e REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry -v /var/lib/registry:/var/lib/registry --restart=always --name registry registry:latest
     
 }
 
